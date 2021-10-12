@@ -343,19 +343,19 @@ CPU可以访问的内存包括两大类 : 寄存器 / cache(L1缓存 / L2缓存)
 
 ## 非连续内存分配管理方法
 
-<img src="C:\Users\a\AppData\Roaming\Typora\typora-user-images\image-20211012162627658.png" alt="image-20211012162627658" style="zoom:50%;" />
+
 
 ### 分段(Segmentation)
 
 **段 :** 在程序中会有来自不同文件的函数 ; 在程序执行时, 不同的数据也有不同的字段, 比如 : 堆 / 栈 / .bss / .data 等
 
-**分段 : ** 更好的分离和共享
+**分段 :** 更好的分离和共享
 
 程序的分段地址空间如下图所示 : 
 
 <img src="https://camo.githubusercontent.com/9db208b68e844759210535e7ec1929186e60dae2153ac930d2e662a782ca7bd1/68747470733a2f2f692e6c6f6c692e6e65742f323032302f31312f31312f4e416e7a484b6a3574454d343136682e6a7067"/>
 
-![image-20211012154818931](C:\Users\a\AppData\Roaming\Typora\typora-user-images\image-20211012154818931.png)
+
 
 **分段寻址方案**
 
@@ -363,7 +363,8 @@ CPU可以访问的内存包括两大类 : 寄存器 / cache(L1缓存 / L2缓存)
 
 一个段 : 一个内存"块"
 
-<img src="C:\Users\a\AppData\Roaming\Typora\typora-user-images\image-20211012155354460.png" alt="image-20211012155354460" style="zoom:67%;" />
+![Uploading 4-3.png…]()
+
 
 程序访问内存地址需要 : 一个二维的二元组(s, addr) → (段号, 地址)
 
@@ -371,7 +372,8 @@ CPU可以访问的内存包括两大类 : 寄存器 / cache(L1缓存 / L2缓存)
 
 物理地址 : 段表中的起始地址 + 二元组中的偏移地址
 
-<img src="C:\Users\a\AppData\Roaming\Typora\typora-user-images\image-20211012163636967.png" alt="image-20211012163636967" style="zoom:70%;" />
+![4-4](https://user-images.githubusercontent.com/77392144/136985550-c4168c8f-1cb2-48a3-96a5-bc6bbd682b90.png)
+
 
 ### 分页(Paging)
 
@@ -406,9 +408,8 @@ CPU可以访问的内存包括两大类 : 寄存器 / cache(L1缓存 / L2缓存)
 
 (例子 : 16-bit地址空间, 9-bit(512 byte) 大小的页帧 物理地址 = (3,6) 物理地址 = 2^9 * 3 + 6 = 1542)
 
-<img src="C:\Users\a\AppData\Roaming\Typora\typora-user-images\image-20211012165928446.png" alt="image-20211012165928446" style="zoom:87%;" />
-
-<img src="C:\Users\a\AppData\Roaming\Typora\typora-user-images\image-20211012171246044.png" alt="image-20211012171246044" style="zoom:57%;" />
+![4-5](https://user-images.githubusercontent.com/77392144/136985669-0191d896-73e3-4550-a602-f16302426003.png)
+![4-6](https://user-images.githubusercontent.com/77392144/136985719-1450475a-1e0c-450d-8749-449d23e15a85.png)
 
 >   分页和分段的最大区别 : 这里的 S 是一个固定的数, 而分段中的长度限制不定
 
@@ -440,7 +441,8 @@ CPU可以访问的内存包括两大类 : 寄存器 / cache(L1缓存 / L2缓存)
 
 - 不是所有的页都有对应的帧
 
-  <img src="C:\Users\a\AppData\Roaming\Typora\typora-user-images\image-20211012173155929.png" alt="image-20211012173155929" style="zoom:80%;" />
+ ![4-7](https://user-images.githubusercontent.com/77392144/136985848-bc06f7fb-9c2a-461e-b6e8-bebc1d66dcc4.png)
+
 
 关于这幅图：
 
@@ -467,7 +469,8 @@ CPU根据程序的page的页号的若干位, 计算出索引值index, 在页表�
 
 - clock / reference（引用，参照） bit：访问位，每次不管是否修改一个页面，都会被访问，是不是这个页面就不重要了呢？其实不是的。这个位记录是否被访问过，如果发生缺页中断的时候，可以将没有访问的页被置换掉。
 
-  <img src="C:\Users\a\AppData\Roaming\Typora\typora-user-images\image-20211012184830469.png" alt="image-20211012184830469" style="zoom:80%;" />
+![4-8](https://user-images.githubusercontent.com/77392144/136985891-c0332154-0c8f-42d5-b1ab-a9540a8d4543.png)
+
 
 **转换实例**
 
@@ -486,11 +489,12 @@ Flags |  Frame nums
 
 0 1 1    0 0 1 0 0           → 页帧是4 偏移是 1023 → 物理地址 (4, 1023)
 
-<img src="C:\Users\a\AppData\Roaming\Typora\typora-user-images\image-20211012192439017.png" alt="image-20211012192439017" style="zoom:80%;" />
+
+![4-9](https://user-images.githubusercontent.com/77392144/136986003-540098ce-c4ea-4d11-b77e-1d04051834cd.png)
 
 
+![4-10](https://user-images.githubusercontent.com/77392144/136986044-a2639033-b9de-4fcf-8e48-9b0deb04106a.png)
 
-<img src="C:\Users\a\AppData\Roaming\Typora\typora-user-images\image-20211012192710537.png" alt="image-20211012192710537" style="zoom:70%;" />
 
 #### 分页机制的性能问题
 
