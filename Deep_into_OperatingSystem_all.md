@@ -251,7 +251,7 @@ CPU可以访问的内存包括两大类 : 寄存器 / cache(L1缓存 / L2缓存)
 
 1. 第一匹配分配 : 在内存中找到第一个比需求大的空闲块, 分配给应用程序
 
-   ![image-20211012152908961](D:\桌面\3-1.png)
+   ![3-1](https://user-images.githubusercontent.com/77392144/136982388-0eff3219-97c6-4845-b4e3-cc023879e73f.png)
 
 2. 最优适配分配 : 在内存中找到最小的空闲块, 分配给应用程序
 
@@ -279,7 +279,8 @@ CPU可以访问的内存包括两大类 : 寄存器 / cache(L1缓存 / L2缓存)
     
       * 需要考虑内存拷贝的开销
     
-        <img src="D:\桌面\3-2.png" alt="image-20211012153630999" style="zoom:90%;" />
+        ![3-2](https://user-images.githubusercontent.com/77392144/136982444-f7f94cf7-1f2a-4950-8cfd-18e79df750a5.png)
+	
     
 2.  交换式碎片整理
 
@@ -301,7 +302,8 @@ CPU可以访问的内存包括两大类 : 寄存器 / cache(L1缓存 / L2缓存)
 
         内存分布 -> 主存 : OS / P1 / P3 / P2         磁盘 : P4
         
-        <img src="D:\桌面\3-3.png" alt="image-20211012153750600" style="zoom:80%;" />
+        ![3-3](https://user-images.githubusercontent.com/77392144/136982514-eebab04a-70bd-46b4-bd4f-38c5cabef472.png)
+
 
 
 
