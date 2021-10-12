@@ -343,7 +343,8 @@ CPU可以访问的内存包括两大类 : 寄存器 / cache(L1缓存 / L2缓存)
 
 ## 非连续内存分配管理方法
 
-![4-1](https://user-images.githubusercontent.com/77392144/4-1.png)
+
+![4-1](https://user-images.githubusercontent.com/77392144/136989415-c87126be-63d1-41a1-a61a-04fd867c3779.png)
 
 
 ### 分段(Segmentation)
@@ -356,7 +357,8 @@ CPU可以访问的内存包括两大类 : 寄存器 / cache(L1缓存 / L2缓存)
 
 <img src="https://camo.githubusercontent.com/9db208b68e844759210535e7ec1929186e60dae2153ac930d2e662a782ca7bd1/68747470733a2f2f692e6c6f6c692e6e65742f323032302f31312f31312f4e416e7a484b6a3574454d343136682e6a7067"/>
 
-![4-2](https://user-images.githubusercontent.com/77392144/4-2.png)
+![4-2](https://user-images.githubusercontent.com/77392144/136989370-30e598dc-7b42-400c-849c-82d8b8164693.png)
+
 
 
 **分段寻址方案**
