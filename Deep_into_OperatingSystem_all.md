@@ -363,8 +363,7 @@ CPU可以访问的内存包括两大类 : 寄存器 / cache(L1缓存 / L2缓存)
 
 一个段 : 一个内存"块"
 
-![Uploading 4-3.png…]()
-
+![4-3](https://user-images.githubusercontent.com/77392144/136987055-faeecf66-29b7-4fc7-b5f6-5e79df707e9e.png)
 
 程序访问内存地址需要 : 一个二维的二元组(s, addr) → (段号, 地址)
 
